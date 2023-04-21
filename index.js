@@ -3,6 +3,7 @@ let app = express();
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
+app.use('/', express.static('dist'));
 const { MongoClient } = require('mongodb');
 const con = new MongoClient('mongodb://0.0.0.0:27017');
 let port = 8000;
