@@ -5,7 +5,9 @@ app.use(cors());
 app.use(express.json());
 app.use('/', express.static('dist'));
 const { MongoClient } = require('mongodb');
-const con = new MongoClient('mongodb://0.0.0.0:27017');
+const con = new MongoClient(
+  'mongodb+srv://root:root@cluster0.dzjjnon.mongodb.net/test'
+);
 let port = 8000;
 
 app.post('/add', async (req, resp) => {
