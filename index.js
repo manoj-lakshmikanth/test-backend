@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 let app = express();
 const cors = require('cors');
@@ -8,7 +9,7 @@ const { MongoClient } = require('mongodb');
 const con = new MongoClient(
   'mongodb+srv://root:root@cluster0.dzjjnon.mongodb.net/test'
 );
-let port = 8000;
+const port = process.env.PORT || 7000;
 
 app.post('/add', async (req, resp) => {
   try {
